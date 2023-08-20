@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Div Property Changer</title>
+<style>
+  .property-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .output-div {
+    width: 200px;
+    height: 100px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+</head>
+<body>
+  <div class="property-container">
+    <label for="color-select">Color:</label>
+    <select id="color-select">
+      <option value="black">Black</option>
+      <option value="red">Red</option>
+      <option value="blue">Blue</option>
+      <option value="green">Green</option>
+    </select>
+    
+    <label for="bg-color-select">Background Color:</label>
+    <select id="bg-color-select">
+      <option value="white">White</option>
+      <option value="gray">Gray</option>
+      <option value="yellow">Yellow</option>
+      <option value="orange">Orange</option>
+    </select>
+    
+    <label for="padding-select">Padding:</label>
+    <select id="padding-select">
+      <option value="0">0</option>
+      <option value="10px">10px</option>
+      <option value="20px">20px</option>
+      <option value="30px">30px</option>
+    </select>
+    
+    <label for="font-size-select">Font Size:</label>
+    <select id="font-size-select">
+      <option value="12px">12px</option>
+      <option value="16px">16px</option>
+      <option value="20px">20px</option>
+      <option value="24px">24px</option>
+    </select>
+    
+    <label for="font-weight-select">Font Weight:</label>
+    <select id="font-weight-select">
+      <option value="normal">Normal</option>
+      <option value="bold">Bold</option>
+      <option value="bolder">Bolder</option>
+    </select>
+  </div>
+  
+  <div class="output-div" id="output-div">Hello I am DIV </div>
+
+  <script>
+    const colorSelect = document.getElementById('color-select');
+    const bgColorSelect = document.getElementById('bg-color-select');
+    const paddingSelect = document.getElementById('padding-select');
+    const fontSizeSelect = document.getElementById('font-size-select');
+    const fontWeightSelect = document.getElementById('font-weight-select');
+    const outputDiv = document.getElementById('output-div');
+    
+    colorSelect.addEventListener('change', () => {
+      outputDiv.style.color = colorSelect.value;
+    });
+    
+    bgColorSelect.addEventListener('change', () => {
+      outputDiv.style.backgroundColor = bgColorSelect.value;
+    });
+    
+    paddingSelect.addEventListener('change', () => {
+      outputDiv.style.padding = paddingSelect.value;
+    });
+    
+    fontSizeSelect.addEventListener('change', () => {
+      outputDiv.style.fontSize = fontSizeSelect.value;
+    });
+    
+    fontWeightSelect.addEventListener('change', () => {
+      outputDiv.style.fontWeight = fontWeightSelect.value;
+    });
+  </script>
+</body>
+</html>
